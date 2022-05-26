@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<odoo>
+    <!--     form views -->
+    <record id="library_info_form_view" model="ir.ui.view">
+        <field name="name">library.info.from.view</field>
+        <field name="model">library.info</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="student_name"/>
+                    </group>
+                    <notebook>
+                        <page string="Issue Details" >
+                            <field name="book_ids">
+                                <tree editable="bottom">
+                                    <field name="book_name_id"/>
+                                    <field name="issue_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--     tree views -->
+    <record id="library_info_tree_view" model="ir.ui.view">
+        <field name="name">library.info.tree.view</field>
+        <field name="model">library.info</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_name"/>
+
+            </tree>
+        </field>
+    </record>
+    <!--     action -->
+    <record id="library_info_action" model="ir.actions.act_window">
+        <field name="name">Library</field>
+        <field name="res_model">library.info</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="library_info_root_child" name="Library" action="library_info_action"
+              parent="students_info_root"/>
+</odoo>

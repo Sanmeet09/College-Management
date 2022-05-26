@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+students_info,students.info,model_students_info,base.group_user,1,1,1,1
+student_grace_wizard,student.grace.wizard,model_student_grace_wizard,base.group_user,1,1,1,1
+library_info,library.info,model_library_info,base.group_user,1,1,1,1
+library_info_line,library.info.line,model_library_info_line,base.group_user,1,1,1,1
+books_info,books.info,model_books_info,base.group_user,1,1,1,1

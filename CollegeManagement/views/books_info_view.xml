@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<odoo>
+    <!--     form views -->
+    <record id="books_info_form_view" model="ir.ui.view">
+        <field name="name">books.info.from.view</field>
+        <field name="model">books.info</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="books_name"/>
+                        <field name="author"/>
+                        <field name="generous"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--     tree views -->
+    <record id="books_info_tree_view" model="ir.ui.view">
+        <field name="name">books.info.tree.view</field>
+        <field name="model">books.info</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="books_name"/>
+                <field name="author"/>
+                <field name="generous"/>
+            </tree>
+        </field>
+    </record>
+    <!--     action -->
+    <record id="books_info_action" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">books.info</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="books_info_root_child" name="Books" action="books_info_action"
+              parent="students_info_root"/>
+</odoo>

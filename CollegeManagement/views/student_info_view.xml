@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<odoo>
+    <!--     form views -->
+    <record id="students_info_form_view" model="ir.ui.view">
+        <field name="name">students.info.from.view</field>
+        <field name="model">students.info</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="full_name"/>
+                            <field name="roll_no"/>
+                        </group>
+                        <group>
+                            <field name="gender"/>
+                            <field name="dob"/>
+                            <field name="age"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Hobbies">
+                            <group>
+                                <field name="reading"/>
+                                <field name="Swim"/>
+                                <field name="dance"/>
+                            </group>
+                        </page>
+                        <page string="Educational Details">
+                            <group>
+                                <group>
+                                    <field name="chemistry"/>
+                                    <field name="physics"/>
+                                    <field name="maths"/>
+                                    <field name="english"/>
+                                </group>
+                                <group>
+                                    <field name="total"/>
+                                    <field name="percentage"/>
+                                    <field name="status"  />
+                                    <field name="grace"  />
+                                    <field name="check_status" invisible="1"  />
+                                    <button class="btn-primary" name="%(action_wizard_students_grace)d" type="action" string="Add Grace" attrs="{'invisible': [('check_status', '=', False)]}"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Subject Books">
+                            <group>
+                                <field name="many_books" widget="many2many_tags"/>
+                            </group>
+                        </page>
+                        <page string="Subject Timetable"></page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--     tree views -->
+    <record id="students_info_tree_view" model="ir.ui.view">
+        <field name="name">students.info.tree.view</field>
+        <field name="model">students.info</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="full_name"/>
+                <field name="gender"/>
+                <field name="dob"/>
+                <field name="phone"/>
+            </tree>
+        </field>
+    </record>
+    <!--     action -->
+    <record id="students_info_action" model="ir.actions.act_window">
+        <field name="name">College Management</field>
+        <field name="res_model">students.info</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="students_info_root" name="College Management"/>
+    <menuitem id="students_info_root_child" name="Students" action="students_info_action"
+              parent="students_info_root"/>
+</odoo>

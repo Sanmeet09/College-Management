@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<odoo>
+    <record id="students_grace_wizard_form" model="ir.ui.view">
+        <field name="name">students.grace.wizard.form</field>
+        <field name="model">student.grace.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Add Grace">
+                    <field name="add_grace"/>
+                </group>
+                <footer>
+                    <button string="Add" name="change_grace" type="object"/>
+                    <button string="Cancel" special="cancel" type="object"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_wizard_students_grace" model="ir.actions.act_window">
+        <field name="name">Update</field>
+        <field name="res_model">student.grace.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="students_grace_wizard_form"/>
+        <field name="binding_model_id" ref="model_students_info"/>
+        <field name="target">new</field>
+    </record>
+</odoo>
