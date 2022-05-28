@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    main content template-->
+    <template id="college_custom_report">
+        <t t-call="web.html_container">
+            <t t-call="CollegeManagement.college_custom_invoice">
+                <div class="page">
+                    <style>
+
+                    </style>
+
+                    <t t-foreach="docs" t-as="doc">
+                        <!--                        from here you can strt your code -->
+                        <table style="width:100%">
+                            <tr>
+                                <td style="width:10% ;vertical-align:top" class="text-left">
+                                    <span>
+                                        To :
+                                    </span>
+                                </td>
+                                <td style="width:40%" class="text-left">
+                                    <span>
+                                        <strong>Industrial Rollers and Linings</strong>
+                                        <br/>
+                                        Survey No.58, Hissa No.2/7,,Village - Gates (Khurd),
+                                        <br/>
+                                        Tal - Wada, Dist - Thane
+                                        <br/>
+                                        GSTIN/UIN : 27AAFPA0841A1ZL
+                                    </span>
+                                </td>
+                                <td style="width:10%; vertical-align:top" class="text-left">
+                                    <span>
+                                        From :
+                                    </span>
+                                </td>
+                                <td style="width:40%" class="text-left">
+                                    <span>
+                                        <strong>
+                                            EEPL - ODOO
+                                        </strong>
+                                        <br/>
+                                        Plot No.A-254 To A-259,Wagle Indl.Est.Thane- 604
+                                        <br/>
+                                        TIN No. : 27720700280V w.e.f. 20/03/09
+                                        <br/>
+                                        CST No. : 27720700280C w.e.f. 20/03/09
+                                        <br/>
+                                        GSTIN/UIN : 27AABCE9492J1Z4
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                        <table style="width:100%">
+                            <tr>
+                                <td style="width 50%" class="text-left">Dear Sir/Madam,</td>
+                                <td style="width 50%" class="text-right">Date : 6-May-2022</td>
+                            </tr>
+                        </table>
+                        <table style="width:100%">
+                            <tr>
+                                <td class="text-center">
+                                    <strong>Sub: Confirmation of Accounts</strong>
+                                    <br/>
+                                    1-Apr-2021 to 5-May-2022
+                                </td>
+                            </tr>
+                        </table>
+                        <table style="width:100%">
+                            <tr>
+                                <td class="text-left">
+                                    Given below is the details of your Accounts as standing in my/our Books of Accounts
+                                    for the above mentioned period.
+                                    <br/>
+                                    <br/>
+                                    Kindly return 3 copies stating your I.T. Permanent A/c No., duly signed and sealed,
+                                    in confirmation of the same. Please note
+                                    that if no reply is received from you within a fortnight, it will be assumed that
+                                    you have accepted the balance shown below
+                                </td>
+                            </tr>
+                        </table>
+                        <table style="width:100%; border:1px solid black">
+                            <tr>
+                                <td style="width:10%;text-align:top">Date</td>
+                                <td style="width:20%; text-align:top">Particular</td>
+                                <td style="width:20% ; text-align:top">Debit Amount</td>
+                                <td style="width:10% ; text-align:top; border-left:1px solid black">Date</td>
+                                <td style="width:20% ; text-align:top">Particular</td>
+                                <td style="width:20% ; text-align:top">Credit Amount</td>
+                            </tr>
+                        </table>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!--    header template-->
+    <template id="external_layout_standard_college">
+        <!--        this is for header part -->
+        <div t-attf-class="header o_company_#{company.id}_layout">
+            <div class="o_boxed_header"/>
+        </div>
+        <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
+             t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+             t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <div class="o_boxed_header"/>
+            <t t-raw="0"/>
+        </div>
+
+        <!--        this is for footer part-->
+        <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            <div class="text-center" style="border-top: 1px solid black;">
+
+
+                <table style="width:100%">
+                    <tr>
+                        <td style=" " class="text-left">I/We hereby confirm the above</td>
+                        <td style="float:right;" class="text-right">Yours faithfully,</td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </template>
+
+    <!--    footer template -->
+    <template id="college_custom_invoice">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!--  Multicompany  -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t t-call="CollegeManagement.external_layout_standard_college">
+            <t t-raw="0"/>
+        </t>
+    </template>
+</odoo>

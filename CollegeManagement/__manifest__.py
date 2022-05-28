@@ -12,6 +12,8 @@
     'data': [
         'security/ir.model.access.csv',
         'wizards/student_wizard_view.xml',
+        'reports/report.xml',
+        'reports/custom_report.xml',
         'views/student_info_view.xml',
         'views/library_info_view.xml',
         'views/books_info_view.xml',

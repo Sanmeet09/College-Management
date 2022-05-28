@@ -23,15 +23,15 @@ class StudentsInfo(models.Model):
     Swim = fields.Boolean('Swimming')
     dance = fields.Boolean('Dancing')
 
-    # eductional details
+    # educational details
     chemistry = fields.Integer('Chemistry', required=True)
     physics = fields.Integer('Physics', required=True)
     maths = fields.Integer('Maths', required=True)
     english = fields.Integer('English', required=True)
     total = fields.Integer('Total', compute='total_marks', store=True)
     percentage = fields.Integer('Percentage')
-    status = fields.Char('Status')
-    check_status = fields.Boolean('check status', compute='check_status_info')
+    status = fields.Char('Status', compute='status_of_marks',store=True)
+    check_status = fields.Boolean('check status', compute='check_status_info',store=True)
     grace = fields.Integer('Add Grace')
 
     # subject
@@ -57,8 +57,7 @@ class StudentsInfo(models.Model):
     #     for rec in self:
     #         if rec.total:
 
-
-    @api.onchange('percentage')
+    @api.depends('percentage')
     def status_of_marks(self):
         for rec in self:
             if rec.percentage:
@@ -69,10 +68,12 @@ class StudentsInfo(models.Model):
 
     @api.depends('status')
     def check_status_info(self):
-        if self.status == 'Fail':
-            self.check_status = True
-        else:
-            self.check_status = False
+        for rec in self:
+            if rec.status:
+                if rec.status == 'Fail':
+                    rec.check_status = True
+                else:
+                    rec.check_status = False
 
     @api.depends('dob')
     def _cal_age(self):
