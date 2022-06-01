@@ -5,89 +5,204 @@
         <t t-call="web.html_container">
             <t t-call="CollegeManagement.library_custom_invoice">
                 <div class="page">
-                    <style>
-
-                    </style>
-
                     <t t-foreach="docs" t-as="doc">
                         <!--                        from here you can strt your code -->
-                        <table style="width:100%">
+                        <table style="width:100%; border:1px solid">
                             <tr>
-                                <td style="width:10% ;vertical-align:top" class="text-left">
-                                    <span>
-                                        To :
-                                    </span>
-                                </td>
-                                <td style="width:40%" class="text-left">
-                                    <span>
-                                        <strong>Industrial Rollers and Linings</strong>
-                                        <br/>
-                                        Survey No.58, Hissa No.2/7,,Village - Gates (Khurd),
-                                        <br/>
-                                        Tal - Wada, Dist - Thane
-                                        <br/>
-                                        GSTIN/UIN : 27AAFPA0841A1ZL
-                                    </span>
-                                </td>
-                                <td style="width:10%; vertical-align:top" class="text-left">
-                                    <span>
-                                        From :
-                                    </span>
-                                </td>
-                                <td style="width:40%" class="text-left">
-                                    <span>
-                                        <strong>
-                                            EEPL - ODOO
-                                        </strong>
-                                        <br/>
-                                        Plot No.A-254 To A-259,Wagle Indl.Est.Thane- 604
-                                        <br/>
-                                        TIN No. : 27720700280V w.e.f. 20/03/09
-                                        <br/>
-                                        CST No. : 27720700280C w.e.f. 20/03/09
-                                        <br/>
-                                        GSTIN/UIN : 27AABCE9492J1Z4
-                                    </span>
+                                <td style='text-align:center' colspan="3">
+                                    <strong>Jajoo Organics LLP - Kota</strong>
                                 </td>
                             </tr>
-                        </table>
-                        <table style="width:100%">
                             <tr>
-                                <td style="width 50%" class="text-left">Dear Sir/Madam,</td>
-                                <td style="width 50%" class="text-right">Date : 6-May-2022</td>
-                            </tr>
-                        </table>
-                        <table style="width:100%">
-                            <tr>
-                                <td class="text-center">
-                                    <strong>Sub: Confirmation of Accounts</strong>
-                                    <br/>
-                                    1-Apr-2021 to 5-May-2022
+                                <td colspan="3" style='text-align:center'>
+                                    D-28-A, I.P.I.A, Road No. 2 Near BSNL Office Kota 324005
                                 </td>
                             </tr>
-                        </table>
-                        <table style="width:100%">
                             <tr>
-                                <td class="text-left">
-                                    Given below is the details of your Accounts as standing in my/our Books of Accounts
-                                    for the above mentioned period.
-                                    <br/>
-                                    <br/>
-                                    Kindly return 3 copies stating your I.T. Permanent A/c No., duly signed and sealed,
-                                    in confirmation of the same. Please note
-                                    that if no reply is received from you within a fortnight, it will be assumed that
-                                    you have accepted the balance shown below
+                                <td colspan="3" style='text-align:center'>
+                                    Mob:, Email :accounts@jajooorganics.com, web: https://www.organicgyaan.com/
                                 </td>
                             </tr>
-                        </table>
-                        <table style="width:100%; border:1px solid black">
                             <tr>
-                                <td style="width:10%;text-align:top">Date</td>
-                                <td style="width:20%; text-align:top">Particular</td>
-                                <td style="width:20% ; text-align:top">Debit Amount</td>
-                                <td style="width:10% ; text-align:top; border-left:1px solid black">Date</td>
-                                <td style="width:20% ; text-align:top">Particular</td>
-                                <td style="width:20% ; text-align:top">Credit Amount</td>
+                                <td colspan="3" style='text-align:center; border-bottom:1px solid'>
+                                    GSTIN : 08AAPFJ4624C1ZE
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Invoice No</strong>
+                                    : INV/2022/00059
+                                </td>
+                                <td colspan="2" style="border-left:1px solid; border-top:1px solid">
+                                    <strong>Invoice Date</strong>
+                                    : 2022-05-27
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-top:1px solid">
+                                    <strong>Billed To</strong>
+                                    : Nisha Gambhir
+                                </td>
+                                <td colspan="2" style="border-left:1px solid;border-top:1px solid ">
+                                    <strong>Shipped To</strong>
+                                    : Nisha Gambhir
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-top:1px solid">
+                                    <strong>Name</strong>: Nisha Gambhir
+                                </td>
+                                <td style="border-top:1px solid ;border-left:1px solid" colspan="2">
+                                    <strong>Name</strong>: Nisha Gambhir
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="">
+                                    <strong>Address</strong>: Kota 10 H 9 Mahaveer Nagar Kota, 324005,
+                                </td>
+                                <td style="border-left:1px solid" colspan="2">
+                                    <strong>Address</strong>: Kota 10 H 9 Mahaveer Nagar Kota, 324005,
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-right:1px solid">
+                                    <strong>Phone :</strong>
+                                </td>
+                                <td colspan="2">
+                                    <strong>Phone :</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-right:1px solid">
+                                    <strong>GSTIN :</strong>
+                                </td>
+                                <td colspan="2">
+                                    <strong>GSTIN :</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                            <td style="border-right:1px solid">
+                                <strong>State :</strong>
+                                Rajasthan
+                            </td>
+                            <td colspan="2">
+                                <strong>State :</strong>
+                                Rajasthan
+                            </td>
+                            </tr>
+                            <tr>
+                                <td style="border-right:1px solid"></td>
+                                <td><strong>LR No</strong>: 0</td>
+                                <td><strong>LR Date</strong>:</td>
+                            </tr>
+                        </table>
+                        <table style="width:100%; border:1px solid">
+                            <tr>
+                                <td style="border-right:1px solid">
+                                    <strong>SNo</strong>
+                                </td>
+                                <td style="border-right:1px solid">
+                                    <strong>HSN CODE</strong>
+                                </td>
+                                <td style="border-right:1px solid">
+                                    <strong>Qty</strong>
+                                </td>
+                                <td style="border-right:1px solid">
+                                    <strong>Taxable Value</strong>
+                                </td>
+                                <td style="border-right:1px solid">
+                                    <strong>CGST%</strong>
+                                </td>
+                                <td style="border-right:1px solid">
+                                    <strong>CGST Amt</strong>
+                                </td>
+                                <td style="border-right:1px solid">
+                                    <strong>SGST%</strong>
+                                </td>
+                                <td style="border-right:1px solid">
+                                    <strong>SGST Amt</strong>
+                                </td>
+                                <td style="border-right:1px solid">
+                                    <strong>IGST%</strong>
+                                </td>
+                                <td style="border-right:1px solid">
+                                    <strong>IGST Amt</strong>
+                                </td>
+                                <td style="border-right:1px solid">
+                                    <strong>Tax Amt</strong>
+                                </td>
+                                <td style="border-right:1px solid">
+                                    <strong>Total Amt</strong>
+                                </td>
+                            </tr>
+                            <t t-value="1" t-set="sq_no"/>
+                            <t t-value="0" t-set="total_qty"/>
+                            <t t-value="0" t-set="total_price"/>
+                            <t t-value="0" t-set="total_amount"/>
+                            <t t-foreach="doc.invoice_line_ids" t-as="line">
+                                <tr>
+                                    <td style="border:1px solid">
+                                        <span>
+                                            <t t-esc="sq_no"/>
+                                            <t t-set="sq_no" t-value="sq_no+1"/>
+                                        </span>
+                                    </td>
+                                    <td style="border:1px solid">
+                                        <span t-esc="line.name"/>
+                                    </td>
+                                    <td style="border:1px solid">
+                                        <span t-esc="line.quantity"/>
+                                        <span t-set="total_qty" t-value="total_qty + line.quantity"/>
+                                    </td>
+                                    <td style="border:1px solid">
+                                        <span t-esc="line.price_unit"/>
+                                    </td>
+                                    <td style="border:1px solid">
+
+                                    </td>
+                                    <td style="border:1px solid">
+
+                                    </td>
+                                    <td style="border:1px solid">
+
+                                    </td>
+                                    <td style="border:1px solid">
+
+                                    </td>
+                                    <td style="border:1px solid">
+
+                                    </td>
+                                    <td style="border:1px solid">
+
+                                    </td>
+                                    <td style="border:1px solid">
+                                        <span t-esc="line.tax_ids.name"/>
+                                    </td>
+                                    <td style="border:1px solid">
+                                        <span t-esc="line.price_subtotal"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr>
+                                <td colspan="2" >Total</td>
+                                <td style="border:1px solid">
+                                    <span>
+                                        <t t-esc="total_qty"/>
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td style="border-left:1px solid" class="text-left">
+                                    <span>
+                                        <t t-esc="doc.amount_total"/>
+                                    </span>
+                                </td>
                             </tr>
                         </table>
                     </t>
@@ -116,8 +231,7 @@
 
                 <table style="width:100%">
                     <tr>
-                        <td style=" " class="text-left">I/We hereby confirm the above</td>
-                        <td style="float:right;" class="text-right">Yours faithfully,</td>
+                        <td style=" " class="text-right">For Jajoo Organics LLP</td><br/>
                     </tr>
                 </table>
             </div>

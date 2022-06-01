@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="college_report" model="ir.actions.report">
-        <field name="name">College Report</field>
-        <field name="model">library.info</field>
+    <record id="library_report" model="ir.actions.report">
+        <field name="name">Report</field>
+        <field name="model">account.move</field>
         <field name="report_type">qweb-html</field>
         <field name="report_name">CollegeManagement.library_custom_report</field>
         <field name="report_file">CollegeManagement.library_custom_report</field>
-        <field name="print_report_name">object.full_name</field>
-        <field name="binding_model_id" ref="model_library_info"/>
+        <field name="print_report_name">object.name</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
         <field name="binding_type">report</field>
     </record>
 </odoo>

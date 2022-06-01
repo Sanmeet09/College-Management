@@ -8,7 +8,6 @@
                     <style>
 
                     </style>
-
                     <t t-foreach="docs" t-as="doc">
                         <!--                        from here you can strt your code -->
                         <table style="width:100%">

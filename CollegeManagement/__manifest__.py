@@ -7,7 +7,7 @@
     'category': '',
     'website': '',
     'depends': [
-        'base'
+        'base','sale'
     ],
     'data': [
         'security/ir.model.access.csv',

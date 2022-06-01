@@ -2,12 +2,41 @@
 
 
 <odoo>
+
+
+<!--    server actions-->
+
+    <record id="action_confirm" model="ir.actions.server">
+        <field name="name">Confirm</field>
+        <field name="model_id" ref="model_students_info"/>
+        <field name="binding_model_id" ref="model_students_info"/>
+        <field name="state">code</field>
+        <field name="code">action = records.action_confirm()</field>
+    </record>
+
+    <record id="action_cancel" model="ir.actions.server">
+        <field name="name">Cancel</field>
+        <field name="model_id" ref="model_students_info"/>
+        <field name="binding_model_id" ref="model_students_info"/>
+        <field name="state">code</field>
+<!--        <field name="code">action = records.action_confirm()</field>-->
+        <field name="code">action = records.action_cancel()</field>
+    </record>
+
+
+
+
     <!--     form views -->
     <record id="students_info_form_view" model="ir.ui.view">
         <field name="name">students.info.from.view</field>
         <field name="model">students.info</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="state" widget="statusbar"/>
+                    <button name="action_confirm" string="Confirm" type="object"/>
+                    <button name="action_url" string="youtube" type="object"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
@@ -73,6 +102,7 @@
                 <field name="gender"/>
                 <field name="dob"/>
                 <field name="phone"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>

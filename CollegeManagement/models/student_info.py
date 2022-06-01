@@ -30,12 +30,16 @@ class StudentsInfo(models.Model):
     english = fields.Integer('English', required=True)
     total = fields.Integer('Total', compute='total_marks', store=True)
     percentage = fields.Integer('Percentage')
-    status = fields.Char('Status', compute='status_of_marks',store=True)
-    check_status = fields.Boolean('check status', compute='check_status_info',store=True)
+    status = fields.Char('Status', compute='status_of_marks', store=True)
+    check_status = fields.Boolean('check status', compute='check_status_info', store=True)
     grace = fields.Integer('Add Grace')
 
     # subject
     many_books = fields.Many2many(comodel_name='books.info', string='Books')
+
+    # state for selecting
+    state = fields.Selection(selection=[('draft', 'Draft'), ('confirm', 'Confirm'), ('cancel', 'Cancel')],
+                             default='draft')
 
     # full name program
     @api.onchange('first_name', 'last_name')
@@ -80,3 +84,18 @@ class StudentsInfo(models.Model):
         for i in self:
             today = date.today()
             i.age = relativedelta(today, i.dob).years
+
+    def action_confirm(self):
+        for rec in self:
+            rec.state = 'confirm'
+
+    def action_cancel(self):
+        for rec in self:
+            rec.state = 'cancel'
+
+    def action_url(self):
+        return {
+            'type': 'ir.actions.act_url',
+            'target': 'new',
+            'url': 'https://www.youtube.com/'
+        }
